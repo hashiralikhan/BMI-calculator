@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Calculator extends StatefulWidget {
@@ -152,6 +153,13 @@ class _CalculatorState extends State<Calculator> {
       ),
     );
   }
+ clear(){
+  heightController.clear();
+  weighttController.clear();
+  CalculateBMI(1,0);
+ }
+
+
 
   void CalculateBMI(double height, double weight) {
     double finalresult = weight / (height * height / 10000);
@@ -176,6 +184,10 @@ class _CalculatorState extends State<Calculator> {
             child: ElevatedButton(
               onPressed: () {
                 changeIndex(index);
+                clear();
+                
+                
+                
               },
               style: ElevatedButton.styleFrom(
                 // returns ButtonStyle
